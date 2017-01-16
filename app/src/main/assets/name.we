@@ -1,0 +1,20 @@
+<template>
+    <div>
+        <text repeat="item in items" class="text {{item.sex}}">{{item.name}}</text>
+    </div>
+</template>
+
+<style>
+    .text{ width:750; padding-top: 10px; padding-bottom: 10px;justify-content: center;text-align: center; color:#ffffff}
+    .male { background-color: #9999ff; }
+    .female { background-color: #ff9999; }
+</style>
+<script>
+    module.exports = {
+        data: {
+            items:[]
+        },
+        methods:{
+        }
+    }
+</script>

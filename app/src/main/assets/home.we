@@ -1,0 +1,76 @@
+<template xmlns="http://www.w3.org/1999/html">
+    <div>
+        <div style="width: 750; height: 200;">
+            <image class="img" src={{imageUrl}}></image>
+        </div>
+        <input ref="input" class="input" type="text"  value={{input}} oninput="oninput" />
+        <a class="button">
+              <text class="text" onclick="add">添加</text>
+        </a>
+        <name items = {{items}}></name>
+    </div>
+
+</template>
+
+<script>
+    module.exports = {
+        data: {
+            imageUrl: 'https://gtms02.alicdn.com/tps/i2/TB1QHKjMXXXXXadXVXX20ySQVXX-512-512.png',
+            input:'',
+            sex:'male',
+            items:[]
+        },
+        methods: {
+            oninput (event) {
+                console.log('ominput:', event.value)
+                this.input = event.value;
+            },
+            add(){
+                if(this.input === '')
+                    return;
+                this.items.unshift({name:this.input,sex:this.sex})
+                this.input = "";
+                if(this.sex === 'female'){
+                    this.sex = 'male';
+                }else{
+                    this.sex = 'female';
+                }
+            }
+        }
+    }
+</script>
+
+<style>
+  .img { width: 200; height: 200; margin-left: 275}
+  .input {
+      font-size: 50px;
+      width: 650px;
+      margin-top: 50px;
+      margin-left: 50px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      color: #666666;
+      border-width: 2px;
+      border-style: solid;
+      border-color: #41B883;
+    }
+  .button {
+      width: 450px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      margin-left: 150px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-width: 2px;
+      border-style: solid;
+      border-color: #DDDDDD;
+      background-color: #F5F5F5
+    }
+    .text {
+      font-size: 30px;
+      color: #666666;
+      text-align: center;
+    }
+</style>

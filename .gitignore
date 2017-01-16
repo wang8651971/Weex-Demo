@@ -1,0 +1,48 @@
+# 可以参考网站 ： https://www.gitignore.io/api/android
+
+# app的安装包
+*.apk
+
+# VM的dex文件
+*.dex
+
+# Java类文件
+*.class
+
+# 自动生成文件
+bin/
+gen/
+out/
+**/build/
+
+# Gradle 文件
+.gradle/
+
+
+# 本地配置文件 (sdk path, 等)
+local.properties
+
+# Eclipse生成Proguard的文件夹
+proguard/
+
+# 日志文件
+*.log
+
+# Android Studio导航编辑器临时文件
+.navigation/
+
+# Android Studio捕获文件夹
+captures/
+
+# Intellij 文件
+*.iml
+.idea/
+
+# 密钥 files
+*.jks
+
+# 在Android Studio 2.2和更高版本中生成的外部本机构建文件夹
+.externalNativeBuild
+
+### Android 补丁 ###
+gen-external-apklibs
